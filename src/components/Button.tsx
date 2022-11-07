@@ -1,14 +1,13 @@
-import { Button as NativeButton, Text, IButtonProps } from "native-base"
+import { Button as ButtonNativeBase, IButtonProps, Text } from "native-base";
 
-interface ButtonProps extends IButtonProps {
-  title: string
-  type?: "PRIMARY" | "SECONDARY"
+interface Props extends IButtonProps {
+  title: string;
+  type?: "PRIMARY" | "SECONDARY";
 }
 
-
-export function Button({ title, type = "PRIMARY", ...rest }: ButtonProps) {
+export function Button({ title, type = "PRIMARY", ...rest }: Props) {
   return (
-    <NativeButton
+    <ButtonNativeBase
       w="full"
       h={14}
       rounded="sm"
@@ -18,11 +17,9 @@ export function Button({ title, type = "PRIMARY", ...rest }: ButtonProps) {
       _pressed={{
         bg: type === "SECONDARY" ? "red.400" : "yellow.600"
       }}
-
       _loading={{
         _spinner: { color: "black" }
       }}
-
       {...rest}
     >
       <Text
@@ -32,6 +29,6 @@ export function Button({ title, type = "PRIMARY", ...rest }: ButtonProps) {
       >
         {title}
       </Text>
-    </NativeButton>
-  )
+    </ButtonNativeBase >
+  );
 }
