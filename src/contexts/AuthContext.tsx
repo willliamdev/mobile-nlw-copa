@@ -7,7 +7,7 @@ interface UserProps {
 }
 
 
-interface AuthContextProps {
+export interface AuthContextDataProps {
   user: UserProps;
   signIn: () => Promise<void>;
 }
@@ -17,7 +17,7 @@ interface AuthContextProviderProps {
   children: ReactNode
 }
 
-export const AuthContext = createContext({} as AuthContextProps)
+export const AuthContext = createContext({} as AuthContextDataProps)
 
 export function AuthContextProvider({ children }: AuthContextProviderProps) {
 
