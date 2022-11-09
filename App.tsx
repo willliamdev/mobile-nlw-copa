@@ -3,7 +3,7 @@ import { useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from "@
 import { THEME } from "./src/styles/theme";
 import { Loading } from "./src/components/Loading";
 import { AuthContextProvider } from "./src/contexts/AuthContext";
-import { Pools } from "./src/screens/Pools";
+import { SignIn } from "./src/screens/SignIn";
 
 export default function App() {
 
@@ -21,7 +21,7 @@ export default function App() {
         />
 
         {
-          fontsLoaded ? <Pools /> : <Loading />
+          fontsLoaded ? <SignIn /> : <Loading />
         }
 
       </AuthContextProvider>
